@@ -47,7 +47,7 @@ final class ImageService implements ServiceInterface
         $image->writeImage($output);
 
         return new ImageInfo(
-            filename: $output,
+            filename: realpath($output),
             width: $width,
             height: $height,
         );
@@ -67,7 +67,7 @@ final class ImageService implements ServiceInterface
         $image->writeImage($output);
 
         return new ImageInfo(
-            filename: $output,
+            filename: realpath($output),
             width: $image->getImageWidth(),
             height: $image->getImageHeight(),
         );
